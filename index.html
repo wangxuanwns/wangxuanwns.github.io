@@ -3,83 +3,672 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xuan Wang</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Xuan Wang | Academic Homepage</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --card: rgba(255, 255, 255, 0.94);
+      --text: #1d1d1f;
+      --subtle: #3f4247;
+      --muted: #6b7078;
+      --line: #e5e5ea;
+      --link: #0066cc;
+      --chip: #f2f2f4;
+      --chip-text: #52565c;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+      --soft-shadow: 0 8px 26px rgba(0, 0, 0, 0.045);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.58;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 34rem),
+        var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 34px 20px 42px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-name {
+      font-weight: 650;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.12s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--link);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: var(--radius);
+      padding: 34px 36px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .profile-photo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+      width: fit-content;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-photo {
+      height: 180px;
+      width: auto;
+      display: block;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 42px;
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      font-weight: 760;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      font-weight: 720;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .identity {
+      font-size: 17px;
+      color: var(--subtle);
+      margin-bottom: 10px;
+    }
+
+    .about-line {
+      max-width: 760px;
+      margin-top: 12px;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-link,
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .pill-link {
+      padding: 5px 13px;
+      border: 1px solid #d7e6fb;
+      background: rgba(247, 250, 255, 0.9);
+      color: var(--link);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .pill-link:hover,
+    .mini-link:hover {
+      text-decoration: none;
+      background: #edf5ff;
+      border-color: #bfd8f7;
+      transform: translateY(-1px);
+    }
+
+    .mini-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 7px;
+    }
+
+    .mini-link {
+      padding: 4px 10px;
+      border: 1px solid #e1e7f0;
+      background: #fbfcff;
+      color: var(--link);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .item-title {
+      font-weight: 680;
+      font-size: 17px;
+      line-height: 1.42;
+      letter-spacing: -0.01em;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.48;
+    }
+
+    .authors {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+
+    .me {
+      color: var(--text);
+      font-weight: 720;
+    }
+
+    .highlight {
+      margin: 6px 0 5px;
+      color: #343840;
+      font-size: 14.8px;
+      line-height: 1.5;
+    }
+
+    .highlight-label {
+      color: var(--text);
+      font-weight: 680;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 7px 7px 0 0;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--chip-text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f2;
+    }
+
+    .publication-card:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .publication-cover-wrap {
+      width: 250px;
+      height: 150px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #e6e8ec;
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+    }
+
+    .publication-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      padding: 8px;
+      background: #fff;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .project-card,
+    .info-panel {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid #eceef2;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.032);
+    }
+
+    .project-card {
+      min-height: 178px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      font-size: 17px;
+      font-weight: 720;
+      letter-spacing: -0.012em;
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    .experience-awards-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 14px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 11px;
+      align-items: start;
+    }
+
+    .school-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 1px;
+      display: block;
+    }
+
+    .timeline-time {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 2px;
+    }
+
+    .timeline-title {
+      font-size: 15.5px;
+      line-height: 1.5;
+      color: var(--text);
+      font-weight: 620;
+    }
+
+    .award-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .award-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #f7f7f9;
+      border: 1px solid #eceef2;
+      color: #343840;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      text-align: center;
+      color: #8a8f98;
+      font-size: 13.5px;
+      padding: 8px 0 24px;
+    }
+
+    @media (max-width: 900px) {
+      .project-grid,
+      .experience-awards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        padding: 24px 14px 36px;
+      }
+
+      .top-nav {
+        display: none;
+      }
+
+      .card {
+        padding: 26px 24px;
+        border-radius: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .profile-photo-wrap {
+        justify-self: center;
+        width: fit-content;
+      }
+
+      .profile-photo {
+        height: 155px;
+      }
+
+      .publication-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .publication-cover-wrap {
+        width: 100%;
+        height: 210px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      .identity,
+      .about-line {
+        font-size: 15.5px;
+      }
+
+      .links {
+        gap: 8px;
+      }
+
+      .pill-link {
+        font-size: 14px;
+        padding: 5px 11px;
+      }
+
+      .publication-cover-wrap {
+        height: 190px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="site">
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <h1 class="site-name">Xuan Wang</h1>
-        <p class="site-role">Master's graduate in Epidemiology and Health Statistics at Sun Yat-sen University.</p>
-
-        <nav class="sidebar-nav">
-          <a class="active" href="index.html">About Me</a>
-          <a href="publications.html">Publications</a>
-        </nav>
-
-        <ul class="sidebar-meta">
-          <li>China</li>
-          <li><a href="mailto:wangxuanwns@163.com">Email</a></li>
-          <li><a href="https://github.com/wangxuanwns">GitHub</a></li>
-        </ul>
+  <main class="container">
+    <nav class="top-nav">
+      <div class="nav-name">Xuan Wang</div>
+      <div class="nav-links">
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Education</a>
       </div>
-    </aside>
+    </nav>
 
-    <main class="content">
-      <section class="content-section">
-        <h2>About Me</h2>
-        <p>
-          I am Xuan Wang. My research focuses on multimodal machine learning, wearable sensing,
-          rehabilitation assessment, fall risk prediction, and gait disorder detection.
+    <section class="card hero">
+      <div>
+        <h1>Xuan Wang</h1>
+        <p class="identity">
+          Master's Graduate in Epidemiology and Health Statistics<br>
+          Sun Yat-sen University
         </p>
-        <p>
-          I work on combining wearable sensor signals, 3D skeletal motion data, and interpretable
-          machine learning methods to support intelligent health assessment for aging and healthcare applications.
+        <p class="about-line">
+          I work on multimodal machine learning, wearable sensing, rehabilitation assessment, fall risk prediction,
+          and gait disorder detection. My recent research combines sensor signals, 3D skeletal motion data, and
+          interpretable learning methods for intelligent health assessment in aging and healthcare applications.
         </p>
-        <p>
-          My recent work has appeared in <em>IEEE Journal of Biomedical and Health Informatics</em>,
-          <em>BMC Geriatrics</em>, and <em>BMC Public Health</em>.
-        </p>
-      </section>
+        <div class="links">
+          <a class="pill-link" href="mailto:wangxuanwns@163.com">Email</a>
+          <a class="pill-link" href="https://github.com/wangxuanwns" target="_blank">GitHub</a>
+        </div>
+      </div>
 
-      <section class="content-section">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Multimodal machine learning</li>
-          <li>Wearable sensor analytics</li>
-          <li>Fall risk prediction</li>
-          <li>Gait disorder detection</li>
-          <li>Rehabilitation assessment</li>
-          <li>Interpretable AI for healthcare</li>
-        </ul>
-      </section>
+      <div class="profile-photo-wrap">
+        <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo">
+      </div>
+    </section>
 
-      <section class="content-section">
-        <h2>Selected Projects</h2>
-        <p>
-          <strong>Wearable Sensor-based Freezing of Gait Detection in Parkinson's Disease.</strong>
-          Developed a generalized monitoring framework that integrates dynamic latent variables with
-          threshold-based and statistical process control methods for personalized anomaly detection.
-        </p>
-        <p>
-          <strong>Machine Learning for Fall Risk Assessment.</strong>
-          Built sensor-driven prediction models for community-dwelling older adults using multifaceted
-          feature extraction, ensemble learning, and motion analysis from wearable and skeletal data.
-        </p>
-      </section>
+    <section class="card" id="publications">
+      <h2>Selected Publications</h2>
 
-      <section class="content-section">
-        <h2>Selected Honors</h2>
-        <ul>
-          <li>Outstanding Graduate, Sun Yat-sen University</li>
-          <li>Inmena Public Health Education Scholarship</li>
-          <li>First-Class Scholarship, Sun Yat-sen University</li>
-          <li>Best Student Poster Award, Hong Kong, 2024</li>
-          <li>Outstanding Paper Award, Peking University Forum, 2023</li>
-        </ul>
-      </section>
-    </main>
-  </div>
+      <div class="publication-card">
+        <div class="publication-cover-wrap">
+          <img src="assets/pub-1.jpg" alt="Publication cover 1" class="publication-cover">
+        </div>
+        <div>
+          <div class="item-title">
+            A Novel Dynamic Latent Variables-Based Framework for Enhancing Freezing of Gait Detection in Parkinson's Disease Patients
+          </div>
+          <div class="authors"><span class="me">Wang X.</span>, Yu L., Qin S. J., Zhao Y.</div>
+          <div class="highlight">
+            <span class="highlight-label">Highlight:</span>
+            Proposed a dynamic latent-variable framework to improve personalized and data-efficient FOG detection.
+          </div>
+          <div class="muted"><em>IEEE Journal of Biomedical and Health Informatics</em>, 2025</div>
+          <span class="tag">FOG detection</span>
+          <span class="tag">Parkinson's disease</span>
+          <span class="tag">Wearable sensors</span>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-cover-wrap">
+          <img src="assets/pub-2.jpg" alt="Publication cover 2" class="publication-cover">
+        </div>
+        <div>
+          <div class="item-title">
+            Sensor-Based Multifaceted Feature Extraction and Ensemble Elastic Net Approach for Assessing Fall Risk in Community-Dwelling Older Adults
+          </div>
+          <div class="authors"><span class="me">Wang X.</span>, Yu L., Wang H., Tsui K. L., Zhao Y.</div>
+          <div class="highlight">
+            <span class="highlight-label">Highlight:</span>
+            Developed a sensor-based fall risk assessment pipeline using multifaceted feature extraction and ensemble learning.
+          </div>
+          <div class="muted"><em>IEEE Journal of Biomedical and Health Informatics</em>, 2024</div>
+          <span class="tag">Fall risk prediction</span>
+          <span class="tag">Elderly health</span>
+          <span class="tag">Feature engineering</span>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-cover-wrap">
+          <img src="assets/pub-3.jpg" alt="Publication cover 3" class="publication-cover">
+        </div>
+        <div>
+          <div class="item-title">
+            Identifying sensor-based parameters associated with fall risk in community-dwelling older adults: an investigation and interpretation of discriminatory parameters
+          </div>
+          <div class="authors"><span class="me">Wang X.</span>, Cao J., Zhao Q., Chen M., Luo J., Wang H., et al.</div>
+          <div class="highlight">
+            <span class="highlight-label">Highlight:</span>
+            Investigated interpretable sensor-derived parameters associated with fall risk in older adults.
+          </div>
+          <div class="muted"><em>BMC Geriatrics</em>, 24(1):125, 2024</div>
+          <span class="tag">Interpretability</span>
+          <span class="tag">Sensors</span>
+          <span class="tag">Geriatrics</span>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-cover-wrap">
+          <img src="assets/pub-4.jpg" alt="Publication cover 4" class="publication-cover">
+        </div>
+        <div>
+          <div class="item-title">
+            A Novel Graph Neural Network Based Approach for Influenza-Like Illness Nowcasting: Exploring the Interplay of Temporal, Geographical, and Functional Spatial Features
+          </div>
+          <div class="authors">Luo J., <span class="me">Wang X.</span>, Fan X., He Y., Du X., Zhao Y.</div>
+          <div class="highlight">
+            <span class="highlight-label">Highlight:</span>
+            Explored graph neural network modeling for city-level influenza-like illness nowcasting with spatial feature analysis.
+          </div>
+          <div class="muted"><em>BMC Public Health</em>, 25:408, 2025</div>
+          <span class="tag">Graph neural networks</span>
+          <span class="tag">Nowcasting</span>
+          <span class="tag">Public health</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <div>
+            <div class="project-title">Wearable Sensor-based Freezing of Gait Detection in PD Patients</div>
+            <div class="project-desc">
+              Integrated dynamic latent variable methods with threshold-based and SPC-style detection for personalized FOG monitoring.
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">A Novel Machine Learning Approach for Assessing Fall Risk</div>
+            <div class="project-desc">
+              Developed an ensemble prediction framework for community-dwelling older adults based on wearable sensor data and multifaceted motion features.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="experience">
+      <h2>Education & Awards</h2>
+      <div class="experience-awards-grid">
+        <div class="info-panel">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <img class="school-logo" src="assets/university-logo-1.png" alt="University logo">
+              <div>
+                <div class="timeline-time">Sep 2022 - Jun 2025</div>
+                <div class="timeline-title">Sun Yat-sen University, Master of Epidemiology and Health Statistics, Outstanding Graduate (Top 3%)</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <img class="school-logo" src="assets/university-logo-2.png" alt="University logo">
+              <div>
+                <div class="timeline-time">Sep 2018 - Jun 2022</div>
+                <div class="timeline-title">Ocean University of China, Bachelor of Science in Mathematics and Applied Mathematics, GPA: 3.69/4.00, Outstanding Graduate (Top 10%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-panel">
+          <h3>Selected Awards</h3>
+          <div class="award-list">
+            <span class="award-chip">Inmena Public Health Education Scholarship</span>
+            <span class="award-chip">First-Class Scholarship</span>
+            <span class="award-chip">Best Student Poster Award</span>
+            <span class="award-chip">Outstanding Paper Award</span>
+            <span class="award-chip">National Second Prize in Statistical Modeling Competition</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Xuan Wang. Built with GitHub Pages.
+  </footer>
 </body>
 </html>
