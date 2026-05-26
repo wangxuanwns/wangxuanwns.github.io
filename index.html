@@ -3,130 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xuan Wang | About Me</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Xuan Wang</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero">
-      <nav class="topnav">
-        <a class="brand" href="index.html">Xuan Wang</a>
-        <div class="nav-links">
+  <div class="site">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <h1 class="site-name">Xuan Wang</h1>
+        <p class="site-role">Master's graduate in Epidemiology and Health Statistics at Sun Yat-sen University.</p>
+
+        <nav class="sidebar-nav">
           <a class="active" href="index.html">About Me</a>
-          <a href="publications.html">Publications & Education</a>
-        </div>
-      </nav>
+          <a href="publications.html">Publications</a>
+        </nav>
 
-      <section class="hero-grid">
-        <div>
-          <p class="eyebrow">Academic Homepage</p>
-          <h1>Multimodal sensing, machine learning, and intelligent health assessment.</h1>
-          <p class="lead">
-            I am Xuan Wang, a Master's student in Epidemiology and Health Statistics at Sun Yat-sen University.
-            My research focuses on multimodal machine learning, wearable sensing, rehabilitation assessment,
-            fall risk prediction, and gait disorder detection.
-          </p>
-          <div class="button-row">
-            <a class="button primary" href="publications.html">View Publications</a>
-            <a class="button secondary" href="https://github.com/wangxuanwns">GitHub</a>
-          </div>
-        </div>
-        <aside class="profile-card">
-          <div class="profile-mark">XW</div>
-          <h2>Xuan Wang</h2>
-          <p>Master of Epidemiology and Health Statistics</p>
-          <p>Sun Yat-sen University</p>
-          <ul class="meta-list">
-            <li>Email: <a href="mailto:wangxuanwns@163.com">wangxuanwns@163.com</a></li>
-            <li>Research area: AI for healthcare</li>
-            <li>Location: China</li>
-          </ul>
-        </aside>
-      </section>
-    </header>
+        <ul class="sidebar-meta">
+          <li>China</li>
+          <li><a href="mailto:wangxuanwns@163.com">Email</a></li>
+          <li><a href="https://github.com/wangxuanwns">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <main>
-      <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow">About Me</p>
-          <h2>Short Bio</h2>
-        </div>
-        <div class="card">
-          <p>
-            I work at the intersection of health data science, multimodal learning, and intelligent sensing.
-            My recent research explores how wearable sensors, 3D skeletal motion data, and interpretable machine
-            learning methods can support fall risk prediction, rehabilitation evaluation, and neurological disorder monitoring.
-          </p>
-          <p>
-            I have published first-author and co-authored papers in journals including
-            <em>IEEE Journal of Biomedical and Health Informatics</em>, <em>BMC Geriatrics</em>,
-            and <em>BMC Public Health</em>.
-          </p>
-        </div>
+    <main class="content">
+      <section class="content-section">
+        <h2>About Me</h2>
+        <p>
+          I am Xuan Wang. My research focuses on multimodal machine learning, wearable sensing,
+          rehabilitation assessment, fall risk prediction, and gait disorder detection.
+        </p>
+        <p>
+          I work on combining wearable sensor signals, 3D skeletal motion data, and interpretable
+          machine learning methods to support intelligent health assessment for aging and healthcare applications.
+        </p>
+        <p>
+          My recent work has appeared in <em>IEEE Journal of Biomedical and Health Informatics</em>,
+          <em>BMC Geriatrics</em>, and <em>BMC Public Health</em>.
+        </p>
       </section>
 
-      <section class="section two-column">
-        <div class="card">
-          <div class="section-heading compact">
-            <p class="eyebrow">Research</p>
-            <h2>Research Interests</h2>
-          </div>
-          <ul class="tag-list">
-            <li>Multimodal Machine Learning</li>
-            <li>Wearable Sensor Analytics</li>
-            <li>Fall Risk Prediction</li>
-            <li>Gait Disorder Detection</li>
-            <li>Rehabilitation Assessment</li>
-            <li>Interpretable AI for Healthcare</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="section-heading compact">
-            <p class="eyebrow">Highlights</p>
-            <h2>Selected Honors</h2>
-          </div>
-          <ul class="plain-list">
-            <li>Outstanding Graduate, Sun Yat-sen University (Top 3%)</li>
-            <li>Inmena Public Health Education Scholarship (Top 1%)</li>
-            <li>First-Class Scholarship, Sun Yat-sen University</li>
-            <li>Best Student Poster Award, Hong Kong, April 2024</li>
-            <li>Outstanding Paper Award, Peking University Forum, October 2023</li>
-          </ul>
-        </div>
+      <section class="content-section">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Multimodal machine learning</li>
+          <li>Wearable sensor analytics</li>
+          <li>Fall risk prediction</li>
+          <li>Gait disorder detection</li>
+          <li>Rehabilitation assessment</li>
+          <li>Interpretable AI for healthcare</li>
+        </ul>
       </section>
 
-      <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Projects</p>
-          <h2>Selected Projects</h2>
-        </div>
-        <div class="project-grid">
-          <article class="card project-card">
-            <h3>Wearable Sensor-based Freezing of Gait Detection in Parkinson's Disease</h3>
-            <p>
-              Developed a generalized monitoring framework that integrates dynamic latent variables with threshold-based
-              and statistical process control methods for personalized and data-efficient anomaly detection.
-            </p>
-          </article>
-          <article class="card project-card">
-            <h3>Machine Learning for Fall Risk Assessment</h3>
-            <p>
-              Built sensor-driven prediction models for community-dwelling older adults using multifaceted feature
-              extraction, ensemble learning, and motion analysis from wearable and skeletal data.
-            </p>
-          </article>
-        </div>
+      <section class="content-section">
+        <h2>Selected Projects</h2>
+        <p>
+          <strong>Wearable Sensor-based Freezing of Gait Detection in Parkinson's Disease.</strong>
+          Developed a generalized monitoring framework that integrates dynamic latent variables with
+          threshold-based and statistical process control methods for personalized anomaly detection.
+        </p>
+        <p>
+          <strong>Machine Learning for Fall Risk Assessment.</strong>
+          Built sensor-driven prediction models for community-dwelling older adults using multifaceted
+          feature extraction, ensemble learning, and motion analysis from wearable and skeletal data.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Selected Honors</h2>
+        <ul>
+          <li>Outstanding Graduate, Sun Yat-sen University</li>
+          <li>Inmena Public Health Education Scholarship</li>
+          <li>First-Class Scholarship, Sun Yat-sen University</li>
+          <li>Best Student Poster Award, Hong Kong, 2024</li>
+          <li>Outstanding Paper Award, Peking University Forum, 2023</li>
+        </ul>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <p>© Xuan Wang</p>
-      <p><a href="publications.html">Publications & Education</a></p>
-    </footer>
   </div>
 </body>
 </html>
